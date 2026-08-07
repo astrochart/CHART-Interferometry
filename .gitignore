@@ -1,0 +1,55 @@
+# ---------------------------------------------------------------------------
+# Raw capture data.  NEVER commit these.
+#
+# A single 60 s two-antenna capture is ~500 MB under sc8 and ~2 GB under fc32;
+# the Winona_Visit tree alone is 24 GB.  GitHub rejects any file over 100 MB,
+# and a blob that reaches a commit stays in history even after you delete it.
+#
+# Patterns are written WITHOUT a directory prefix so they match at any depth --
+# `GNU_RADIO/*.npz` in the CHART repo silently failed to cover
+# `GNU_RADIO/Winona_Visit/*.npz`, which is how the sidecars showed up untracked.
+# ---------------------------------------------------------------------------
+*.iq
+*.npz
+*.dat
+
+# Capture session trees
+Winona_Visit/
+keep/
+day_one/
+day_two/
+day_three/
+
+# ---------------------------------------------------------------------------
+# Generated plots.  Regenerate from the notebooks; committing them means every
+# rerun shows as a binary diff.  Add a specific figure with `git add -f` if it
+# needs to ship with the README.
+# ---------------------------------------------------------------------------
+*.png
+*.pdf
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# ---------------------------------------------------------------------------
+# Jupyter
+# ---------------------------------------------------------------------------
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# Editor / OS
+# ---------------------------------------------------------------------------
+*.swp
+*~
+.DS_Store
+.vscode/
+.idea/
